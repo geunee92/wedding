@@ -7,7 +7,9 @@ import Heading from '@components/sections/Heading'
 import Video from '@components/sections/Video'
 import FullScreenMessage from '@shared/FullScreenMessage'
 import { Wedding } from './types/wedding'
-import ImageGallery from './components/sections/ImgaeGallery'
+import ImageGallery from './components/sections/ImageGallery'
+import IntroMessage from './components/sections/IntroMessage'
+import Invitation from './components/sections/Invitation'
 
 const cx = classNames.bind(styles)
 
@@ -48,13 +50,30 @@ function App() {
 
   if (wedding === null) return null
 
-  const { date, galleryImages } = wedding
+  const {
+    date,
+    galleryImages,
+    groom,
+    bride,
+    location,
+    message: { intro, invitation },
+  } = wedding
 
   return (
     <div className={cx('container')}>
       <Heading date={date} />
 
       <Video />
+
+      <IntroMessage
+        groomName={groom.name}
+        brideName={bride.name}
+        locationName={location.name}
+        date={date}
+        message={intro}
+      />
+
+      <Invitation invitationMessage={invitation} />
 
       <ImageGallery images={galleryImages} />
     </div>
