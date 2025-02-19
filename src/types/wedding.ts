@@ -35,6 +35,7 @@ interface Person {
 interface Account {
   bankName: string
   accountNumber: string
+  kakaopayLink?: string
 }
 
 export type { Wedding, Location, Person, Account }
