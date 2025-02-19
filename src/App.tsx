@@ -10,6 +10,8 @@ import { Wedding } from './types/wedding'
 import ImageGallery from './components/sections/ImageGallery'
 import IntroMessage from './components/sections/IntroMessage'
 import Invitation from './components/sections/Invitation'
+import Calendar from './components/sections/Calendar'
+import Map from './components/sections/Map'
 
 const cx = classNames.bind(styles)
 
@@ -76,6 +78,10 @@ function App() {
       <Invitation invitationMessage={invitation} />
 
       <ImageGallery images={galleryImages} />
+
+      <Calendar date={date} />
+
+      <Map location={location} />
     </div>
   )
 }
