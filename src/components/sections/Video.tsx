@@ -14,7 +14,8 @@ function Video() {
         // poster="/assets/poster.jpg"
         controls={true}
       >
-        <source src="/assets/medium.mp4" type="video/mp4" />
+        <source src="/assets/main.webm" type="video/webm" />
+        <source src="/assets/main.mp4" type="video/mp4" />
       </video>
     </Section>
   )
