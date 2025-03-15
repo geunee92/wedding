@@ -3,7 +3,7 @@ import { getWedding } from '../api/wedding'
 import { useQuery } from 'react-query'
 
 function useWedding() {
-  const { data, isLoading, error } = useQuery<Wedding>(
+  const { data } = useQuery<Wedding>(
     ['wedding'],
     () =>
       getWedding().then((res) => {
@@ -19,8 +19,6 @@ function useWedding() {
 
   return {
     wedding: data,
-    isLoading,
-    error,
   }
 }
 
